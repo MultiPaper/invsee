@@ -41,7 +41,13 @@ public class InvSeeCommand implements CommandExecutor {
         Player otherPlayer = Bukkit.getPlayer(args[0]);
 
         if (otherPlayer == null) {
-            player.sendMessage(ChatColor.RED + "Could not find player " + args[0]);
+            player.sendMessage(ChatColor.RED + "Could not find player " + args[0] + ".");
+            return false;
+        }
+
+        if (player == otherPlayer) {
+            // Players can dupe items if they invsee themselves.
+            player.sendMessage(ChatColor.RED + "You cannot invsee yourself.");
             return false;
         }
 
