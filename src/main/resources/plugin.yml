@@ -1,0 +1,15 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+author: PureGero
+website: https://github.com/MultiPaper/${project.name}
+api-version: 1.17
+commands:
+  invsee:
+    description: See a player's inventory
+    permission: invsee
+permissions:
+  invsee:
+    description: See a player's inventory
+    default: op
